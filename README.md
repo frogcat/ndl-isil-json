@@ -24,6 +24,7 @@ JSON-LD および GeoJSON に変換して提供します。
 # Demo
 
 `ndl-isil-geojson.min.json` をロードして地図上に全データをプロットするデモです。
+
 小縮尺では [leaflet-areacodecluster](https://github.com/frogcat/leaflet-areacodecluster) を使って
 都道府県・市区町村ごとにクラスタリング表示されます。
 
@@ -31,7 +32,7 @@ JSON-LD および GeoJSON に変換して提供します。
 
 # Build
 
-```
+```bash
 $ git clone https://github.com/frogcat/ndl-isil-json.git
 $ cd ndl-isil-json
 $ npm install
