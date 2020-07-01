@@ -1,0 +1,29 @@
+{
+  "name": "ndl-isil-json",
+  "version": "1.0.0",
+  "description": "convert ndl isil-lod RDF/XML into JSON",
+  "main": "main.js",
+  "scripts": {
+    "setup": "mkdir -p .cache;cd .cache;curl https://www.ndl.go.jp/jp/dlib/standards/opendataset/isil-[1000-1007].rdf -O",
+    "jsonld": "node main.js .cache/*.rdf > dist/isil-jsonld.json",
+    "geojson": "node main.js --geojson .cache/*.rdf > dist/isil-geojson.json",
+    "build": "npm run setup; npm run jsonld; npm run geojson",
+    "gh-pages": "npm run build;mkdir -p public;cp dist/* public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frogcat/ndl-isil-json.git"
+  },
+  "keywords": [
+    "rdf"
+  ],
+  "author": "frogcat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frogcat/ndl-isil-json/issues"
+  },
+  "homepage": "https://github.com/frogcat/ndl-isil-json#readme",
+  "dependencies": {
+    "rdflib": "^1.2.2"
+  }
+}
