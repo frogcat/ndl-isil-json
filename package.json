@@ -5,10 +5,8 @@
   "main": "main.js",
   "scripts": {
     "setup": "mkdir -p .cache;cd .cache;curl https://www.ndl.go.jp/jp/dlib/standards/opendataset/isil-[1000-1007].rdf -O",
-    "jsonld": "node main.js .cache/*.rdf > dist/isil-jsonld.json",
-    "geojson": "node main.js --geojson .cache/*.rdf > dist/isil-geojson.json",
-    "build": "npm run setup; npm run jsonld; npm run geojson",
-    "gh-pages": "npm run build;mkdir -p public;cp dist/* public"
+    "build": "npm run setup; node main.js .cache/*.rdf",
+    "gh-pages": "npm run build;mkdir -p public;cp -t public dist/* README.md"
   },
   "repository": {
     "type": "git",

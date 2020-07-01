@@ -54,24 +54,24 @@ const jsonld = store2jsonld(store, context, subjects);
 // owl の namespace を正常化する
 jsonld["@context"].owl = "http://www.w3.org/2002/07/owl#";
 
+const geojson = {
+  "type": "FeatureCollection",
+  "features": jsonld["@graph"].filter(a => a["org:hasSite"] && a["org:hasSite"]["geo:long"]).map(a => {
+    return {
+      "type": "Feature",
+      "properties": a,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          parseFloat(a["org:hasSite"]["geo:long"]),
+          parseFloat(a["org:hasSite"]["geo:lat"])
+        ]
+      }
+    };
+  })
+};
 
-if (Array.from(process.argv).indexOf("--geojson") !== -1) {
-  console.log(JSON.stringify({
-    "type": "FeatureCollection",
-    "features": jsonld["@graph"].filter(a => a["org:hasSite"] && a["org:hasSite"]["geo:long"]).map(a => {
-      return {
-        "type": "Feature",
-        "properties": a,
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            parseFloat(a["org:hasSite"]["geo:long"]),
-            parseFloat(a["org:hasSite"]["geo:lat"])
-          ]
-        }
-      };
-    })
-  }, null, 2));
-} else {
-  console.log(JSON.stringify(jsonld, null, 2));
-}
+fs.writeFileSync(`${__dirname}/dist/ndl-isil-geojson.json`, JSON.stringify(geojson, null, 2), "UTF-8");
+fs.writeFileSync(`${__dirname}/dist/ndl-isil-geojson.min.json`, JSON.stringify(geojson), "UTF-8");
+fs.writeFileSync(`${__dirname}/dist/ndl-isil-jsonld.json`, JSON.stringify(jsonld, null, 2), "UTF-8");
+fs.writeFileSync(`${__dirname}/dist/ndl-isil-jsonld.min.json`, JSON.stringify(jsonld), "UTF-8");
