@@ -27,6 +27,15 @@ const context = {
   },
   "rdfs:seeAlso": {
     "@type": "@id"
+  },
+  "dcterms:identifier": {
+    "@type": "http://ndl.go.jp/dcndl/terms/ISIL"
+  },
+  "dbpedia:originalName": {
+    "@language": "ja"
+  },
+  "schema:alternateName": {
+    "@language": "ja"
   }
 };
 

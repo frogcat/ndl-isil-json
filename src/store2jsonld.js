@@ -14,18 +14,23 @@ module.exports = function(store, context, subjects) {
       let v;
       switch (o.termType) {
         case "Literal":
-          if (o.datatype.value === "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString")
+          if (o.datatype.value === "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString") {
             v = {
               "@value": o.value,
               "@language": o.language
             };
-          else if (o.datatype.value === "http://www.w3.org/2001/XMLSchema#string")
+            if (context[p] && context[p]["@language"] && context[p]["@language"] === v["@language"])
+              v = v["@value"];
+          } else if (o.datatype.value === "http://www.w3.org/2001/XMLSchema#string") {
             v = o.value;
-          else
+          } else {
             v = {
               "@value": o.value,
               "@type": shorten(o.datatype.value)
             };
+            if (context[p] && context[p]["@type"] && context[p]["@type"] === v["@type"])
+              v = v["@value"];
+          }
           break;
         case "NamedNode":
           if (p === "@type" || (context[p] && context[p]["@type"] === "@id"))

@@ -24,7 +24,10 @@
         "owl:sameAs",
         "schema:url",
         "schema:areaServed",
-        "rdfs:seeAlso"
+        "rdfs:seeAlso",
+        "dcterms:identifier",
+        "dbpedia:originalName",
+        "schema:alternateName"
       ],
       "additionalProperties": false,
       "properties": {
@@ -132,6 +135,45 @@
               "const": "@id"
             }
           }
+        },
+        "dcterms:identifier": {
+          "type": "object",
+          "required": [
+            "@type"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "http://ndl.go.jp/dcndl/terms/ISIL"
+            }
+          }
+        },
+        "dbpedia:originalName": {
+          "type": "object",
+          "required": [
+            "@language"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "@language": {
+              "type": "string",
+              "const": "ja"
+            }
+          }
+        },
+        "schema:alternateName": {
+          "type": "object",
+          "required": [
+            "@language"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "@language": {
+              "type": "string",
+              "const": "ja"
+            }
+          }
         }
       }
     },
@@ -166,61 +208,37 @@
                 "minItems": 2,
                 "maxItems": 2,
                 "items": {
-                  "type": "object",
-                  "required": [
-                    "@value",
-                    "@type"
-                  ],
-                  "additionalProperties": false,
-                  "properties": {
-                    "@value": {
+                  "oneOf": [
+                    {
                       "type": "string"
                     },
-                    "@type": {
-                      "type": "string",
-                      "enum": [
-                        "http://ndl.go.jp/dcndl/terms/ISIL",
-                        "http://ndl.go.jp/dcndl/terms/ISNI"
-                      ]
+                    {
+                      "type": "object",
+                      "required": [
+                        "@value",
+                        "@type"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "@value": {
+                          "type": "string"
+                        },
+                        "@type": {
+                          "type": "string",
+                          "const": "http://ndl.go.jp/dcndl/terms/ISNI"
+                        }
+                      }
                     }
-                  }
+                  ]
                 }
               },
               {
-                "type": "object",
-                "required": [
-                  "@value",
-                  "@type"
-                ],
-                "additionalProperties": false,
-                "properties": {
-                  "@value": {
-                    "type": "string"
-                  },
-                  "@type": {
-                    "type": "string",
-                    "const": "http://ndl.go.jp/dcndl/terms/ISIL"
-                  }
-                }
+                "type": "string"
               }
             ]
           },
           "dbpedia:originalName": {
-            "type": "object",
-            "required": [
-              "@value",
-              "@language"
-            ],
-            "additionalProperties": false,
-            "properties": {
-              "@value": {
-                "type": "string"
-              },
-              "@language": {
-                "type": "string",
-                "const": "ja"
-              }
-            }
+            "type": "string"
           },
           "schema:name": {
             "type": "array",
@@ -336,21 +354,7 @@
             }
           },
           "schema:alternateName": {
-            "type": "object",
-            "required": [
-              "@value",
-              "@language"
-            ],
-            "additionalProperties": false,
-            "properties": {
-              "@value": {
-                "type": "string"
-              },
-              "@language": {
-                "type": "string",
-                "const": "ja"
-              }
-            }
+            "type": "string"
           },
           "rdfs:seeAlso": {
             "type": "string"
