@@ -30,6 +30,8 @@ JSON-LD および GeoJSON に変換して提供します。
 
 - <https://frogcat.github.io/ndl-isil-json/>
 
+![preview](https://repository-images.githubusercontent.com/276288699/375cc700-bbc5-11ea-92ce-871aeb4b7aa9)
+
 # Build
 
 ```bash
