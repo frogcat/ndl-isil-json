@@ -6,7 +6,8 @@
   "scripts": {
     "setup": "mkdir -p .cache;cd .cache;curl https://www.ndl.go.jp/jp/dlib/standards/opendataset/isil-[1000-1007].rdf -O",
     "build": "npm run setup; node main.js .cache/*.rdf",
-    "gh-pages": "npm run build;mkdir -p public;cp -t public dist/* README.md"
+    "gh-pages": "npm run build;mkdir -p public;cp -t public dist/* README.md",
+    "test": "ajv -s spec/schema.json -d dist/ndl-isil.jsonld"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,8 @@
   "homepage": "https://github.com/frogcat/ndl-isil-json#readme",
   "dependencies": {
     "rdflib": "^1.2.2"
+  },
+  "devDependencies": {
+    "ajv-cli": "^3.2.1"
   }
 }

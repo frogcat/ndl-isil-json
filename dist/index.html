@@ -25,7 +25,7 @@
     map.attributionControl.addAttribution('<a href="https://www.ndl.go.jp/jp/dlib/standards/opendataset/#ISIL_trial">NDL ISIL-LOD</a>');
     map.attributionControl.addAttribution('<a href="https://github.com/frogcat/ndl-isil-json">fork me on GitHub</a>');
 
-    fetch("ndl-isil-geojson.min.json").then(a => a.json()).then(json => {
+    fetch("ndl-isil.min.geojson").then(a => a.json()).then(json => {
       const markers = json.features.map(f => {
         const lat = f.geometry.coordinates[1];
         const lon = f.geometry.coordinates[0];

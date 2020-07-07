@@ -12,12 +12,12 @@ JSON-LD および GeoJSON に変換して提供します。
 
 以下からダウンロードできます。CORS が許可されているのでウェブブラウザから直接 `fetch` して利用することも可能です。
 
-`*.json` と `*.min.json` は内容は同一ですが、`*.min.json` はインデントがないのでその分ダウンロードサイズが小さいです。
+`*.[geo]json` と `*.min.[geo]json` は内容は同一ですが、`*.min.[geo]json` はインデントがないのでその分ダウンロードサイズが小さいです。
 
-- [ndl-isil-jsonld.json](https://frogcat.github.io/ndl-isil-json/ndl-isil-jsonld.json) (JSON-LD, 約11.2Mbytes)
-- [ndl-isil-jsonld.min.json](https://frogcat.github.io/ndl-isil-json/ndl-isil-jsonld.min.json) (JSON-LD, 約8.1Mbytes)
-- [ndl-isil-geojson.json](https://frogcat.github.io/ndl-isil-json/ndl-isil-geojson.json) (GeoJSON, 約13.2Mbytes)
-- [ndl-isil-geojson.min.json](https://frogcat.github.io/ndl-isil-json/ndl-isil-geojson.min.json) (GeoJSON,約8.8Mbytes)
+- [ndl-isil.json](https://frogcat.github.io/ndl-isil-json/ndl-isil.json) (JSON-LD, 約11.2Mbytes)
+- [ndl-isil.min.json](https://frogcat.github.io/ndl-isil-json/ndl-isil.min.json) (JSON-LD, 約8.1Mbytes)
+- [ndl-isil.geojson](https://frogcat.github.io/ndl-isil-json/ndl-isil.geojson) (GeoJSON, 約13.2Mbytes)
+- [ndl-isil.min.geojson](https://frogcat.github.io/ndl-isil-json/ndl-isil.min.geojson) (GeoJSON,約8.8Mbytes)
 
 これらのファイルの実体は [gh-pages](https://github.com/frogcat/ndl-isil-json/tree/gh-pages) ブランチに保存されています。
 

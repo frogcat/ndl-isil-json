@@ -1,0 +1,362 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "@context",
+    "@graph"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "@context": {
+      "type": "object",
+      "required": [
+        "link",
+        "gn",
+        "schema",
+        "rdfs",
+        "geo",
+        "dbpedia",
+        "owl",
+        "rdf",
+        "org",
+        "dcterms",
+        "org:classification",
+        "owl:sameAs",
+        "schema:url",
+        "schema:areaServed",
+        "rdfs:seeAlso"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "link": {
+          "type": "string",
+          "const": "http://www.w3.org/2007/ont/link#"
+        },
+        "gn": {
+          "type": "string",
+          "const": "http://www.geonames.org/ontology#"
+        },
+        "schema": {
+          "type": "string",
+          "const": "http://schema.org/"
+        },
+        "rdfs": {
+          "type": "string",
+          "const": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        "geo": {
+          "type": "string",
+          "const": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+        },
+        "dbpedia": {
+          "type": "string",
+          "const": "http://dbpedia.org/ontology/"
+        },
+        "owl": {
+          "type": "string",
+          "const": "http://www.w3.org/2002/07/owl#"
+        },
+        "rdf": {
+          "type": "string",
+          "const": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        "org": {
+          "type": "string",
+          "const": "http://www.w3.org/ns/org#"
+        },
+        "dcterms": {
+          "type": "string",
+          "const": "http://purl.org/dc/terms/"
+        },
+        "org:classification": {
+          "type": "object",
+          "required": [
+            "@type"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "@id"
+            }
+          }
+        },
+        "owl:sameAs": {
+          "type": "object",
+          "required": [
+            "@type"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "@id"
+            }
+          }
+        },
+        "schema:url": {
+          "type": "object",
+          "required": [
+            "@type"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "@id"
+            }
+          }
+        },
+        "schema:areaServed": {
+          "type": "object",
+          "required": [
+            "@type"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "@id"
+            }
+          }
+        },
+        "rdfs:seeAlso": {
+          "type": "object",
+          "required": [
+            "@type"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "@id"
+            }
+          }
+        }
+      }
+    },
+    "@graph": {
+      "type": "array",
+      "minItems": 7570,
+      "maxItems": 7570,
+      "items": {
+        "type": "object",
+        "required": [
+          "@id",
+          "@type",
+          "dcterms:identifier",
+          "dbpedia:originalName",
+          "schema:name",
+          "org:classification",
+          "org:hasSite"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "@id": {
+            "type": "string"
+          },
+          "@type": {
+            "type": "string",
+            "const": "schema:Organization"
+          },
+          "dcterms:identifier": {
+            "oneOf": [
+              {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "@value",
+                    "@type"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "@value": {
+                      "type": "string"
+                    },
+                    "@type": {
+                      "type": "string",
+                      "enum": [
+                        "http://ndl.go.jp/dcndl/terms/ISIL",
+                        "http://ndl.go.jp/dcndl/terms/ISNI"
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "required": [
+                  "@value",
+                  "@type"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "@value": {
+                    "type": "string"
+                  },
+                  "@type": {
+                    "type": "string",
+                    "const": "http://ndl.go.jp/dcndl/terms/ISIL"
+                  }
+                }
+              }
+            ]
+          },
+          "dbpedia:originalName": {
+            "type": "object",
+            "required": [
+              "@value",
+              "@language"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "@value": {
+                "type": "string"
+              },
+              "@language": {
+                "type": "string",
+                "const": "ja"
+              }
+            }
+          },
+          "schema:name": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "required": [
+                "@value",
+                "@language"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "@value": {
+                  "type": "string"
+                },
+                "@language": {
+                  "type": "string",
+                  "enum": [
+                    "ja",
+                    "ja-Kana",
+                    "en"
+                  ]
+                }
+              }
+            }
+          },
+          "org:classification": {
+            "type": "string",
+            "enum": [
+              "http://id.ndl.go.jp/vocab/libtype#NationalLibraries",
+              "http://id.ndl.go.jp/vocab/libtype#SpecialLibraries",
+              "http://id.ndl.go.jp/vocab/libtype#PublicLibraries",
+              "http://id.ndl.go.jp/vocab/libtype#AcademicLibraries",
+              "http://id.ndl.go.jp/vocab/libtype#SchoolLibraryMediaCenters",
+              "http://id.ndl.go.jp/vocab/libtype#RelatedOrganizations"
+            ]
+          },
+          "owl:sameAs": {
+            "oneOf": [
+              {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "schema:url": {
+            "type": "string"
+          },
+          "org:hasSite": {
+            "type": "object",
+            "required": [
+              "org:siteAddress"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "@type": {
+                "type": "string",
+                "const": "org:Site"
+              },
+              "org:siteAddress": {
+                "type": "object",
+                "required": [
+                  "schema:addressCountry",
+                  "gn:countryCode"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "schema:postalCode": {
+                    "type": "string"
+                  },
+                  "schema:addressCountry": {
+                    "type": "string",
+                    "const": "Japan"
+                  },
+                  "gn:countryCode": {
+                    "type": "string",
+                    "const": "JP"
+                  },
+                  "schema:areaServed": {
+                    "type": "string"
+                  },
+                  "schema:addressRegion": {
+                    "type": "string"
+                  },
+                  "schema:addressLocality": {
+                    "type": "string"
+                  },
+                  "schema:streetAddress": {
+                    "type": "string"
+                  }
+                }
+              },
+              "geo:long": {
+                "type": "string"
+              },
+              "geo:lat": {
+                "type": "string"
+              },
+              "schema:telephone": {
+                "type": "string"
+              },
+              "schema:faxNumber": {
+                "type": "string"
+              }
+            }
+          },
+          "schema:alternateName": {
+            "type": "object",
+            "required": [
+              "@value",
+              "@language"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "@value": {
+                "type": "string"
+              },
+              "@language": {
+                "type": "string",
+                "const": "ja"
+              }
+            }
+          },
+          "rdfs:seeAlso": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

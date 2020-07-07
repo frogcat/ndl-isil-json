@@ -71,7 +71,7 @@ const geojson = {
   })
 };
 
-fs.writeFileSync(`${__dirname}/dist/ndl-isil-geojson.json`, JSON.stringify(geojson, null, 2), "UTF-8");
-fs.writeFileSync(`${__dirname}/dist/ndl-isil-geojson.min.json`, JSON.stringify(geojson), "UTF-8");
-fs.writeFileSync(`${__dirname}/dist/ndl-isil-jsonld.json`, JSON.stringify(jsonld, null, 2), "UTF-8");
-fs.writeFileSync(`${__dirname}/dist/ndl-isil-jsonld.min.json`, JSON.stringify(jsonld), "UTF-8");
+fs.writeFileSync(`${__dirname}/dist/ndl-isil.geojson`, JSON.stringify(geojson, null, 2), "UTF-8");
+fs.writeFileSync(`${__dirname}/dist/ndl-isil.min.geojson`, JSON.stringify(geojson), "UTF-8");
+fs.writeFileSync(`${__dirname}/dist/ndl-isil.json`, JSON.stringify(jsonld, null, 2), "UTF-8");
+fs.writeFileSync(`${__dirname}/dist/ndl-isil.min.json`, JSON.stringify(jsonld), "UTF-8");
