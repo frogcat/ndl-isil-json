@@ -9,6 +9,31 @@
   <link rel="stylesheet" href="https://frogcat.github.io/leaflet-areacodecluster/dist/leaflet-areacodecluster.default.css" />
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
   <script src="https://frogcat.github.io/leaflet-areacodecluster/dist/leaflet-areacodecluster.min.js"></script>
+  <style>
+    .leaflet-marker-icon.NationalLibraries {
+      filter: hue-rotate(0deg);
+    }
+
+    .leaflet-marker-icon.SpecialLibraries {
+      filter: hue-rotate(60deg);
+    }
+
+    .leaflet-amrker-icon.PublicLibraries {
+      filter: hue-rotate(120deg);
+    }
+
+    .leaflet-marker-icon.AcademicLibraries {
+      filter: hue-rotate(180deg);
+    }
+
+    .leaflet-marker-icon.SchoolLibraryMediaCenters {
+      filter: hue-rotate(240deg);
+    }
+
+    .leaflet-marker-icon.RelatedOrganizations {
+      filter: hue-rotate(300deg);
+    }
+  </style>
 </head>
 
 <body>
@@ -29,11 +54,24 @@
       const markers = json.features.map(f => {
         const lat = f.geometry.coordinates[1];
         const lon = f.geometry.coordinates[0];
-        const name = f.properties["schema:name"].find(x => x["@language"] === "ja")["@value"];
-        const code = f.properties["org:hasSite"]["org:siteAddress"]["schema:areaServed"];
-        return L.circleMarker([lat, lon], {
-          areaCode: code
-        }).bindTooltip(name);
+        const p = f.properties;
+        let isil = p["dcterms:identifier"];
+        if (Array.isArray(isil)) isil = isil.find(x => typeof x === 'string');
+        const name = p["dbpedia:originalName"];
+        const code = p["org:hasSite"]["org:siteAddress"]["schema:areaServed"];
+        return L.marker([lat, lon], {
+          areaCode: code,
+          icon: new L.Icon.Default({
+            className: p["org:classification"].replace(/^.*#/, "")
+          })
+        }).bindTooltip(`${isil}:${name}`).bindPopup(function() {
+          const pre = document.createElement("pre");
+          pre.appendChild(document.createTextNode(JSON.stringify(p, null, 2)));
+          return pre;
+        }, {
+          maxWidth: 460,
+          minWidth: 460
+        });
       });
       L.areaCodeCluster(markers, {
         areaCodeModifier: function(zoom, areaCode) {
