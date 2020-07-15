@@ -6,10 +6,11 @@
     "setup": "mkdir -p .cache;cd .cache;curl https://www.ndl.go.jp/jp/dlib/standards/opendataset/isil-[1000-1007].rdf -O",
     "jsonld": "node bin/jsonld.js .cache/*.rdf > dist/ndl-isil.json && node bin/minify.js dist/ndl-isil.json > dist/ndl-isil.min.json",
     "geojson": "node bin/geojson.js dist/ndl-isil.json > dist/ndl-isil.geojson && node bin/minify.js dist/ndl-isil.geojson > dist/ndl-isil.min.geojson",
-    "schema": "node bin/schema.js dist/ndl-isil.json > spec/schema.json",
-    "build": "npm run setup; npm run jsonld; npm run geojson",
-    "gh-pages": "npm run build;mkdir -p public;cp -t public dist/* README.md",
-    "test": "ajv -s spec/schema.json -d dist/ndl-isil.json"
+    "schema": "node bin/schema.js dist/ndl-isil.json > dist/ndl-isil.schema.json",
+    "schemadocs": "jsonschema2md -d dist -o public/docs -x -",
+    "build": "npm run setup; npm run jsonld; npm run geojson;npm run schema",
+    "gh-pages": "npm run build;mkdir -p public;cp -t public dist/* README.md;jsonschema2md -d dist -o public/docs",
+    "test": "ajv -s dist/ndl-isil.schema.json -d dist/ndl-isil.json"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "rdfxml-streaming-parser": "^1.3.6"
   },
   "devDependencies": {
+    "@adobe/jsonschema2md": "^4.1.5",
     "ajv-cli": "^3.2.1"
   }
 }

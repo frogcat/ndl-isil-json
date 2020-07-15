@@ -68,7 +68,10 @@ const dig = function(json, schema) {
     schema.required = schema.required.filter(x => properties.indexOf(x) !== -1);
 
     properties.forEach(p => {
-      if (schema.properties[p] === undefined) schema.properties[p] = {};
+      if (schema.properties[p] === undefined)
+        schema.properties[p] = {
+          "title": p
+        };
       dig(json[p], schema.properties[p]);
     });
 
@@ -81,7 +84,13 @@ const dig = function(json, schema) {
 };
 
 module.exports = function(root) {
-  return dig(root, {
-    "$schema": "http://json-schema.org/draft-07/schema#"
+  const schema = dig(root, {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "JSON-LD"
   });
+  schema.properties["@context"].title = "JSON-LD Context";
+  schema.properties["@graph"].title = "JSON-LD Graph";
+  schema.properties["@graph"].items.title = "Organization";
+
+  return schema;
 };
