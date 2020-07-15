@@ -1,33 +1,23 @@
 const fs = require('fs');
-const $rdf = require("rdflib");
-const store2context = require("../src/store2context");
-const store2jsonld = require("../src/store2jsonld");
+const RdfXmlParser = require("rdfxml-streaming-parser").RdfXmlParser;
+const Factory = require('../src/quad2jsonld');
 
-const store = $rdf.graph();
-Array.from(process.argv).slice(2).filter(file => file.endsWith(".rdf")).forEach(file => {
-  try {
-    let body = fs.readFileSync(file, "UTF-8");
-    // owl:sameAs の特例を回避するためパース前に namespace を書き換える
-    body = body.replace("http://www.w3.org/2002/07/owl#", "http://example.org/");
-    $rdf.parse(body, store, "http://example.org/", "application/rdf+xml");
-  } catch (err) {
-    console.error(err);
-    return;
+const factory = new Factory();
+const files = Array.from(process.argv).slice(2).filter(x => x.endsWith(".rdf"));
+const consume = function() {
+  if (files.length > 0) {
+    new RdfXmlParser()
+      .import(fs.createReadStream(files.pop()))
+      .on('data', function(quad) {
+        factory.push(quad);
+      })
+      .on('error', console.error)
+      .on('end', function() {
+        consume();
+      });
+  } else {
+    const jsonld = factory.finalize();
+    console.log(JSON.stringify(jsonld, null, 2));
   }
-});
-
-const context = store2context(store);
-
-const subjects = store.statementsMatching(
-  undefined,
-  $rdf.sym("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"),
-  $rdf.sym("http://schema.org/Organization")
-).map(t => t.subject);
-
-const jsonld = store2jsonld(store, context, subjects);
-// owl の namespace を正常化する
-Object.values(jsonld["@context"]).forEach(a => {
-  a["@id"] = a["@id"].replace("http://example.org/", "http://www.w3.org/2002/07/owl#");
-});
-
-console.log(JSON.stringify(jsonld, null, 2));
+};
+consume();
