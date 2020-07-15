@@ -2,10 +2,13 @@
   "name": "ndl-isil-json",
   "version": "1.0.0",
   "description": "convert ndl isil-lod RDF/XML into JSON",
-  "main": "main.js",
   "scripts": {
     "setup": "mkdir -p .cache;cd .cache;curl https://www.ndl.go.jp/jp/dlib/standards/opendataset/isil-[1000-1007].rdf -O",
-    "build": "npm run setup; node main.js .cache/*.rdf",
+    "context": "node bin/context.js .cache/*.rdf",
+    "jsonld": "node bin/jsonld.js .cache/*.rdf > dist/ndl-isil.json && node bin/minify.js dist/ndl-isil.json > dist/ndl-isil.min.json",
+    "geojson": "node bin/geojson.js dist/ndl-isil.json > dist/ndl-isil.geojson && node bin/minify.js dist/ndl-isil.geojson > dist/ndl-isil.min.geojson",
+    "schema": "node bin/schema.js dist/ndl-isil.json > spec/schema.json",
+    "build": "npm run setup; npm run jsonld; npm run geojson",
     "gh-pages": "npm run build;mkdir -p public;cp -t public dist/* README.md",
     "test": "ajv -s spec/schema.json -d dist/ndl-isil.json"
   },

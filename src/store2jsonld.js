@@ -1,58 +1,65 @@
 module.exports = function(store, context, subjects) {
 
-  const shorten = function(uri) {
-    if (uri === "http://www.w3.org/1999/02/22-rdf-syntax-ns#type") return "@type";
-    const key = Object.keys(context).find(key => uri.indexOf(context[key]) === 0);
-    return key ? uri.replace(context[key], key + ":") : uri;
-  };
-
   const dig = function(subject, target) {
     if (target["@id"] === undefined && subject.uri) target["@id"] = subject.uri;
     store.statementsMatching(subject, undefined, undefined).forEach(t => {
-      const p = shorten(t.predicate.uri);
+
       const o = t.object;
-      let v;
-      switch (o.termType) {
-        case "Literal":
-          if (o.datatype.value === "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString") {
-            v = {
-              "@value": o.value,
-              "@language": o.language
-            };
-            if (context[p] && context[p]["@language"] && context[p]["@language"] === v["@language"])
-              v = v["@value"];
-          } else if (o.datatype.value === "http://www.w3.org/2001/XMLSchema#string") {
-            v = o.value;
-          } else {
-            v = {
-              "@value": o.value,
-              "@type": shorten(o.datatype.value)
-            };
-            if (context[p] && context[p]["@type"] && context[p]["@type"] === v["@type"])
-              v = v["@value"];
-          }
-          break;
-        case "NamedNode":
-          if (p === "@type" || (context[p] && context[p]["@type"] === "@id"))
-            v = shorten(o.value);
-          else v = {
-            "@id": shorten(o.value)
-          };
-          break;
-        case "BlankNode":
-          v = dig(o, {});
-          break;
-        default:
-          console.error(o.termType);
-          return;
+
+      let name = Object.keys(context).find(key => {
+        const val = context[key];
+        if (val["@id"] !== t.predicate.uri) return false;
+        if (val["@container"] === "@language" && t.object.language) return true;
+        if (val["@language"]) {
+          return val["@language"] === t.object.language;
+        }
+        if (val["@type"]) {
+          if (val["@type"] === "@id")
+            return t.object.datatype === undefined;
+          return val["@type"] === t.object.datatype.value;
+        }
+        return t.object.datatype.value === "http://www.w3.org/2001/XMLSchema#string";
+      });
+
+      if (t.predicate.uri === "http://www.w3.org/1999/02/22-rdf-syntax-ns#type") {
+        name = "@type";
       }
-      if (target[p] === undefined) {
-        target[p] = v;
-      } else if (Array.isArray(target[p])) {
-        if (target[p].indexOf(v) === -1)
-          target[p].push(v);
-      } else if (target[p] !== v) {
-        target[p] = [target[p], v];
+
+      if (name === undefined) {
+        console.error(`unknown predicate ${t.predicate.uri}`);
+        return;
+      }
+
+      const def = context[name];
+      let v;
+      if (name === "@type") {
+        v = Object.keys(context).find(x => context[x]["@id"] === o.value);
+      } else if (def["@type"] === "@id") {
+        if (o.termType === "NamedNode") {
+          v = o.value;
+        } else {
+          v = dig(o, {});
+        }
+      } else if (def["@container"] === "@language" && o.language) {
+        if (target[name] === undefined)
+          target[name] = {};
+        if (target[name][o.language] === undefined)
+          target[name][o.language] = o.value;
+        else if (Array.isArray(target[name][o.language]))
+          target[name][o.language].push(o.value);
+        else target[name][o.language] = [target[name][o.language], o.value];
+        return;
+      } else {
+        v = o.value;
+      }
+
+      if (target[name] === undefined) {
+        target[name] = v;
+      } else if (Array.isArray(target[name])) {
+        if (target[name].indexOf(v) === -1)
+          target[name].push(v);
+      } else if (target[name] !== v) {
+        target[name] = [target[name], v];
       }
     });
     return target;

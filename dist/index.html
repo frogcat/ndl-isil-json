@@ -55,14 +55,13 @@
         const lat = f.geometry.coordinates[1];
         const lon = f.geometry.coordinates[0];
         const p = f.properties;
-        let isil = p["dcterms:identifier"];
-        if (Array.isArray(isil)) isil = isil.find(x => typeof x === 'string');
-        const name = p["dbpedia:originalName"];
-        const code = p["org:hasSite"]["org:siteAddress"]["schema:areaServed"];
+        const isil = p.identifierISIL;
+        const name = p.originalName;
+        const code = p.hasSite.siteAddress.areaServed;
         return L.marker([lat, lon], {
           areaCode: code,
           icon: new L.Icon.Default({
-            className: p["org:classification"].replace(/^.*#/, "")
+            className: p.classification.replace(/^.*#/, "")
           })
         }).bindTooltip(`${isil}:${name}`).bindPopup(function() {
           const pre = document.createElement("pre");
