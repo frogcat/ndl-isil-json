@@ -19,7 +19,7 @@ undefined
 
 | Property              | Type     | Required | Nullable       | Defined by                                                                         |
 | :-------------------- | -------- | -------- | -------------- | :--------------------------------------------------------------------------------- |
-| [@context](#@context) | `object` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-context.md "undefined#/properties/@context") |
+| [@context](#@context) | `string` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-context.md "undefined#/properties/@context") |
 | [@graph](#@graph)     | `array`  | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph.md "undefined#/properties/@graph")     |
 
 ## @context
@@ -30,13 +30,21 @@ undefined
 `@context`
 
 -   is required
--   Type: `object` ([JSON-LD Context](ndl-isil-properties-json-ld-context.md))
+-   Type: `string` ([JSON-LD Context](ndl-isil-properties-json-ld-context.md))
 -   cannot be null
 -   defined in: [JSON-LD](ndl-isil-properties-json-ld-context.md "undefined#/properties/@context")
 
 ### @context Type
 
-`object` ([JSON-LD Context](ndl-isil-properties-json-ld-context.md))
+`string` ([JSON-LD Context](ndl-isil-properties-json-ld-context.md))
+
+### @context Constraints
+
+**constant**: the value of this property must be equal to:
+
+```json
+"https://frogcat.github.io/ndl-isil-json/ndl-isil.context.json"
+```
 
 ## @graph
 

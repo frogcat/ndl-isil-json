@@ -1,0 +1,113 @@
+{
+  "@context": {
+    "Organization": {
+      "@id": "http://schema.org/Organization"
+    },
+    "Site": {
+      "@id": "http://www.w3.org/ns/org#Site"
+    },
+    "addressCountry": {
+      "@id": "http://schema.org/addressCountry"
+    },
+    "addressLocality": {
+      "@id": "http://schema.org/addressLocality"
+    },
+    "addressRegion": {
+      "@id": "http://schema.org/addressRegion"
+    },
+    "alternateName": {
+      "@id": "http://schema.org/alternateName",
+      "@language": "ja"
+    },
+    "areaServed": {
+      "@id": "http://schema.org/areaServed",
+      "@type": "@id"
+    },
+    "classification": {
+      "@id": "http://www.w3.org/ns/org#classification",
+      "@type": "@id"
+    },
+    "comment": {
+      "@id": "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "countryCode": {
+      "@id": "http://www.geonames.org/ontology#countryCode"
+    },
+    "creator": {
+      "@id": "http://purl.org/dc/terms/creator"
+    },
+    "description": {
+      "@id": "http://purl.org/dc/terms/description"
+    },
+    "faxNumber": {
+      "@id": "http://schema.org/faxNumber"
+    },
+    "hasSite": {
+      "@id": "http://www.w3.org/ns/org#hasSite",
+      "@type": "@id"
+    },
+    "identifierISIL": {
+      "@id": "http://purl.org/dc/terms/identifier",
+      "@type": "http://ndl.go.jp/dcndl/terms/ISIL"
+    },
+    "identifierISNI": {
+      "@id": "http://purl.org/dc/terms/identifier",
+      "@type": "http://ndl.go.jp/dcndl/terms/ISNI"
+    },
+    "issued": {
+      "@id": "http://purl.org/dc/terms/issued"
+    },
+    "language": {
+      "@id": "http://purl.org/dc/terms/language"
+    },
+    "lat": {
+      "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+    },
+    "long": {
+      "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+    },
+    "modified": {
+      "@id": "http://purl.org/dc/terms/modified"
+    },
+    "name": {
+      "@id": "http://schema.org/name",
+      "@container": "@language"
+    },
+    "originalName": {
+      "@id": "http://dbpedia.org/ontology/originalName",
+      "@language": "ja"
+    },
+    "postalCode": {
+      "@id": "http://schema.org/postalCode"
+    },
+    "sameAs": {
+      "@id": "http://www.w3.org/2002/07/owl#sameAs",
+      "@type": "@id"
+    },
+    "seeAlso": {
+      "@id": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "@type": "@id"
+    },
+    "siteAddress": {
+      "@id": "http://www.w3.org/ns/org#siteAddress",
+      "@type": "@id"
+    },
+    "source": {
+      "@id": "http://purl.org/dc/terms/source",
+      "@type": "@id"
+    },
+    "streetAddress": {
+      "@id": "http://schema.org/streetAddress"
+    },
+    "telephone": {
+      "@id": "http://schema.org/telephone"
+    },
+    "title": {
+      "@id": "http://purl.org/dc/terms/title"
+    },
+    "url": {
+      "@id": "http://schema.org/url",
+      "@type": "@id"
+    }
+  }
+}
