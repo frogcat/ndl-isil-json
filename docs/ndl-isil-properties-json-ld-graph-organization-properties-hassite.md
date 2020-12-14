@@ -19,12 +19,12 @@ undefined#/properties/@graph/items/properties/hasSite
 
 | Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                            |
 | :-------------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [siteAddress](#siteAddress) | `object` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress") |
+| [siteAddress](#siteaddress) | `object` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress") |
 | [long](#long)               | `string` | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-long.md "undefined#/properties/@graph/items/properties/hasSite/properties/long")               |
 | [lat](#lat)                 | `string` | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-lat.md "undefined#/properties/@graph/items/properties/hasSite/properties/lat")                 |
 | [telephone](#telephone)     | `string` | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-telephone.md "undefined#/properties/@graph/items/properties/hasSite/properties/telephone")     |
-| [faxNumber](#faxNumber)     | `string` | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-faxnumber.md "undefined#/properties/@graph/items/properties/hasSite/properties/faxNumber")     |
-| [@type](#@type)             | `string` | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-type.md "undefined#/properties/@graph/items/properties/hasSite/properties/@type")              |
+| [faxNumber](#faxnumber)     | `string` | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-faxnumber.md "undefined#/properties/@graph/items/properties/hasSite/properties/faxNumber")     |
+| [@type](#type)              | `string` | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-type.md "undefined#/properties/@graph/items/properties/hasSite/properties/@type")              |
 
 ## siteAddress
 

@@ -19,18 +19,18 @@ undefined#/properties/@graph/items
 
 | Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                            |
 | :-------------------------------- | -------- | -------- | -------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [@id](#@id)                       | `string` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-id.md "undefined#/properties/@graph/items/properties/@id")                        |
+| [@id](#id)                        | `string` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-id.md "undefined#/properties/@graph/items/properties/@id")                        |
 | [url](#url)                       | `string` | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-url.md "undefined#/properties/@graph/items/properties/url")                       |
 | [name](#name)                     | `object` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-name.md "undefined#/properties/@graph/items/properties/name")                     |
 | [classification](#classification) | `string` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-classification.md "undefined#/properties/@graph/items/properties/classification") |
-| [originalName](#originalName)     | `string` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-originalname.md "undefined#/properties/@graph/items/properties/originalName")     |
-| [@type](#@type)                   | `string` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-type.md "undefined#/properties/@graph/items/properties/@type")                    |
-| [hasSite](#hasSite)               | `object` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite.md "undefined#/properties/@graph/items/properties/hasSite")               |
-| [identifierISIL](#identifierISIL) | `string` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-identifierisil.md "undefined#/properties/@graph/items/properties/identifierISIL") |
-| [sameAs](#sameAs)                 | Merged   | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-sameas.md "undefined#/properties/@graph/items/properties/sameAs")                 |
-| [seeAlso](#seeAlso)               | `string` | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-seealso.md "undefined#/properties/@graph/items/properties/seeAlso")               |
-| [alternateName](#alternateName)   | `string` | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-alternatename.md "undefined#/properties/@graph/items/properties/alternateName")   |
-| [identifierISNI](#identifierISNI) | `string` | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-identifierisni.md "undefined#/properties/@graph/items/properties/identifierISNI") |
+| [originalName](#originalname)     | `string` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-originalname.md "undefined#/properties/@graph/items/properties/originalName")     |
+| [@type](#type)                    | `string` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-type.md "undefined#/properties/@graph/items/properties/@type")                    |
+| [hasSite](#hassite)               | `object` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite.md "undefined#/properties/@graph/items/properties/hasSite")               |
+| [identifierISIL](#identifierisil) | `string` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-identifierisil.md "undefined#/properties/@graph/items/properties/identifierISIL") |
+| [sameAs](#sameas)                 | Merged   | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-sameas.md "undefined#/properties/@graph/items/properties/sameAs")                 |
+| [seeAlso](#seealso)               | `string` | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-seealso.md "undefined#/properties/@graph/items/properties/seeAlso")               |
+| [alternateName](#alternatename)   | `string` | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-alternatename.md "undefined#/properties/@graph/items/properties/alternateName")   |
+| [identifierISNI](#identifierisni) | `string` | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-identifierisni.md "undefined#/properties/@graph/items/properties/identifierISNI") |
 
 ## @id
 

@@ -17,10 +17,10 @@ undefined
 
 # JSON-LD Properties
 
-| Property              | Type     | Required | Nullable       | Defined by                                                                         |
-| :-------------------- | -------- | -------- | -------------- | :--------------------------------------------------------------------------------- |
-| [@context](#@context) | `string` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-context.md "undefined#/properties/@context") |
-| [@graph](#@graph)     | `array`  | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph.md "undefined#/properties/@graph")     |
+| Property             | Type     | Required | Nullable       | Defined by                                                                         |
+| :------------------- | -------- | -------- | -------------- | :--------------------------------------------------------------------------------- |
+| [@context](#context) | `string` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-context.md "undefined#/properties/@context") |
+| [@graph](#graph)     | `array`  | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph.md "undefined#/properties/@graph")     |
 
 ## @context
 
