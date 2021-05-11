@@ -30,7 +30,7 @@
     "rdfxml-streaming-parser": "^1.4.0"
   },
   "devDependencies": {
-    "@adobe/jsonschema2md": "^4.2.1",
+    "@adobe/jsonschema2md": "^6.0.3",
     "ajv-cli": "^3.3.0"
   }
 }
