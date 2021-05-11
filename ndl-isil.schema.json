@@ -16,17 +16,17 @@
     "@graph": {
       "title": "JSON-LD Graph",
       "type": "array",
-      "minItems": 7570,
-      "maxItems": 7570,
+      "minItems": 7581,
+      "maxItems": 7581,
       "items": {
         "type": "object",
         "required": [
           "@id",
+          "hasSite",
+          "@type",
+          "originalName",
           "name",
           "classification",
-          "originalName",
-          "@type",
-          "hasSite",
           "identifierISIL"
         ],
         "additionalProperties": false,
@@ -35,61 +35,28 @@
             "title": "@id",
             "type": "string"
           },
-          "url": {
-            "title": "url",
-            "type": "string"
-          },
-          "name": {
-            "title": "name",
-            "type": "object",
-            "required": [
-              "ja"
-            ],
-            "additionalProperties": false,
-            "properties": {
-              "ja": {
-                "title": "ja",
-                "type": "string"
-              },
-              "ja-kana": {
-                "title": "ja-kana",
-                "type": "string"
-              },
-              "en": {
-                "title": "en",
-                "type": "string"
-              }
-            }
-          },
-          "classification": {
-            "title": "classification",
-            "type": "string",
-            "enum": [
-              "http://id.ndl.go.jp/vocab/libtype#PublicLibraries",
-              "http://id.ndl.go.jp/vocab/libtype#SpecialLibraries",
-              "http://id.ndl.go.jp/vocab/libtype#AcademicLibraries",
-              "http://id.ndl.go.jp/vocab/libtype#RelatedOrganizations",
-              "http://id.ndl.go.jp/vocab/libtype#SchoolLibraryMediaCenters",
-              "http://id.ndl.go.jp/vocab/libtype#NationalLibraries"
-            ]
-          },
-          "originalName": {
-            "title": "originalName",
-            "type": "string"
-          },
-          "@type": {
-            "title": "@type",
-            "type": "string",
-            "const": "Organization"
-          },
           "hasSite": {
             "title": "hasSite",
             "type": "object",
             "required": [
+              "@type",
               "siteAddress"
             ],
             "additionalProperties": false,
             "properties": {
+              "faxNumber": {
+                "title": "faxNumber",
+                "type": "string"
+              },
+              "@type": {
+                "title": "@type",
+                "type": "string",
+                "const": "Site"
+              },
+              "telephone": {
+                "title": "telephone",
+                "type": "string"
+              },
               "siteAddress": {
                 "title": "siteAddress",
                 "type": "object",
@@ -131,28 +98,62 @@
                   }
                 }
               },
-              "long": {
-                "title": "long",
-                "type": "string"
-              },
               "lat": {
                 "title": "lat",
                 "type": "string"
               },
-              "telephone": {
-                "title": "telephone",
+              "long": {
+                "title": "long",
                 "type": "string"
-              },
-              "faxNumber": {
-                "title": "faxNumber",
-                "type": "string"
-              },
-              "@type": {
-                "title": "@type",
-                "type": "string",
-                "const": "Site"
               }
             }
+          },
+          "url": {
+            "title": "url",
+            "type": "string"
+          },
+          "@type": {
+            "title": "@type",
+            "type": "string",
+            "const": "Organization"
+          },
+          "originalName": {
+            "title": "originalName",
+            "type": "string"
+          },
+          "name": {
+            "title": "name",
+            "type": "object",
+            "required": [
+              "ja"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "ja": {
+                "title": "ja",
+                "type": "string"
+              },
+              "ja-kana": {
+                "title": "ja-kana",
+                "type": "string"
+              },
+              "en": {
+                "title": "en",
+                "type": "string"
+              }
+            }
+          },
+          "classification": {
+            "title": "classification",
+            "type": "string",
+            "enum": [
+              "http://id.ndl.go.jp/vocab/libtype#PublicLibraries",
+              "http://id.ndl.go.jp/vocab/libtype#SpecialLibraries",
+              "http://id.ndl.go.jp/vocab/libtype#AcademicLibraries",
+              "http://id.ndl.go.jp/vocab/libtype#RelatedOrganizations",
+              "http://id.ndl.go.jp/vocab/libtype#SchoolLibraryMediaCenters",
+              "http://id.ndl.go.jp/vocab/libtype#NationalLibraries"
+            ]
           },
           "identifierISIL": {
             "title": "identifierISIL",
@@ -174,12 +175,12 @@
               }
             ]
           },
-          "seeAlso": {
-            "title": "seeAlso",
-            "type": "string"
-          },
           "alternateName": {
             "title": "alternateName",
+            "type": "string"
+          },
+          "seeAlso": {
+            "title": "seeAlso",
             "type": "string"
           },
           "identifierISNI": {

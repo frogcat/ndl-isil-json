@@ -6,10 +6,9 @@ undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress
 
 
 
-
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                      |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [ndl-isil.schema.json\*](../../out/ndl-isil.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                     |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [ndl-isil.schema.json*](../../out/ndl-isil.schema.json "open original schema") |
 
 ## siteAddress Type
 
@@ -18,7 +17,7 @@ undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress
 # siteAddress Properties
 
 | Property                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                  |
-| :---------------------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| :---------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [postalCode](#postalcode)           | `string` | Optional | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-postalcode.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/postalCode")           |
 | [addressCountry](#addresscountry)   | `string` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-addresscountry.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/addressCountry")   |
 | [countryCode](#countrycode)         | `string` | Required | cannot be null | [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-countrycode.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/countryCode")         |
@@ -31,13 +30,15 @@ undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress
 
 
 
-
 `postalCode`
 
--   is optional
--   Type: `string` ([postalCode](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-postalcode.md))
--   cannot be null
--   defined in: [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-postalcode.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/postalCode")
+*   is optional
+
+*   Type: `string` ([postalCode](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-postalcode.md))
+
+*   cannot be null
+
+*   defined in: [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-postalcode.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/postalCode")
 
 ### postalCode Type
 
@@ -47,13 +48,15 @@ undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress
 
 
 
-
 `addressCountry`
 
--   is required
--   Type: `string` ([addressCountry](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-addresscountry.md))
--   cannot be null
--   defined in: [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-addresscountry.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/addressCountry")
+*   is required
+
+*   Type: `string` ([addressCountry](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-addresscountry.md))
+
+*   cannot be null
+
+*   defined in: [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-addresscountry.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/addressCountry")
 
 ### addressCountry Type
 
@@ -71,13 +74,15 @@ undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress
 
 
 
-
 `countryCode`
 
--   is required
--   Type: `string` ([countryCode](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-countrycode.md))
--   cannot be null
--   defined in: [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-countrycode.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/countryCode")
+*   is required
+
+*   Type: `string` ([countryCode](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-countrycode.md))
+
+*   cannot be null
+
+*   defined in: [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-countrycode.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/countryCode")
 
 ### countryCode Type
 
@@ -95,13 +100,15 @@ undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress
 
 
 
-
 `areaServed`
 
--   is optional
--   Type: `string` ([areaServed](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-areaserved.md))
--   cannot be null
--   defined in: [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-areaserved.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/areaServed")
+*   is optional
+
+*   Type: `string` ([areaServed](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-areaserved.md))
+
+*   cannot be null
+
+*   defined in: [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-areaserved.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/areaServed")
 
 ### areaServed Type
 
@@ -111,13 +118,15 @@ undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress
 
 
 
-
 `addressRegion`
 
--   is optional
--   Type: `string` ([addressRegion](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-addressregion.md))
--   cannot be null
--   defined in: [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-addressregion.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/addressRegion")
+*   is optional
+
+*   Type: `string` ([addressRegion](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-addressregion.md))
+
+*   cannot be null
+
+*   defined in: [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-addressregion.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/addressRegion")
 
 ### addressRegion Type
 
@@ -127,13 +136,15 @@ undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress
 
 
 
-
 `addressLocality`
 
--   is optional
--   Type: `string` ([addressLocality](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-addresslocality.md))
--   cannot be null
--   defined in: [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-addresslocality.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/addressLocality")
+*   is optional
+
+*   Type: `string` ([addressLocality](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-addresslocality.md))
+
+*   cannot be null
+
+*   defined in: [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-addresslocality.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/addressLocality")
 
 ### addressLocality Type
 
@@ -143,13 +154,15 @@ undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress
 
 
 
-
 `streetAddress`
 
--   is optional
--   Type: `string` ([streetAddress](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-streetaddress.md))
--   cannot be null
--   defined in: [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-streetaddress.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/streetAddress")
+*   is optional
+
+*   Type: `string` ([streetAddress](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-streetaddress.md))
+
+*   cannot be null
+
+*   defined in: [JSON-LD](ndl-isil-properties-json-ld-graph-organization-properties-hassite-properties-siteaddress-properties-streetaddress.md "undefined#/properties/@graph/items/properties/hasSite/properties/siteAddress/properties/streetAddress")
 
 ### streetAddress Type
 
